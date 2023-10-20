@@ -1,5 +1,6 @@
 class ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show update destroy ]
+
   def index
     @articles = Article.all
     render json: @articles
@@ -29,7 +30,7 @@ class ArticlesController < ApplicationController
   private
 
   def set_article
-    @article = Article.find(params[:id])
+    @article = Article.find(params[:hashid])
   end
 
   def article_params

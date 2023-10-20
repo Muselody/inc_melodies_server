@@ -14,6 +14,8 @@ gem "puma", "~> 5.0"
 
 gem 'rspec-rails', '~> 5.0'
 
+gem "hashid-rails", "~> 1.0"
+
 # Build JSON APIs with ease [https://github.com/rails/jbuilder]
 # gem "jbuilder"
 

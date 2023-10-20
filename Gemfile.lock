@@ -79,6 +79,10 @@ GEM
     erubi (1.12.0)
     globalid (1.2.1)
       activesupport (>= 6.1)
+    hashid-rails (1.4.1)
+      activerecord (>= 4.0)
+      hashids (~> 1.0)
+    hashids (1.0.6)
     i18n (1.14.1)
       concurrent-ruby (~> 1.0)
     io-console (0.6.0)
@@ -185,6 +189,7 @@ PLATFORMS
 DEPENDENCIES
   bootsnap
   debug
+  hashid-rails (~> 1.0)
   pg (~> 1.1)
   puma (~> 5.0)
   rails (~> 7.0.5)
