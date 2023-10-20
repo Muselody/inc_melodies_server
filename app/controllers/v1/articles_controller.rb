@@ -9,7 +9,7 @@ class V1::ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      render json: { success: "article succesfully created"}, status: :created
+      render json: { success: "article successfully created" }, status: :created
     else
       render json: @article.errors, status: :unprocessable_entity
     end
