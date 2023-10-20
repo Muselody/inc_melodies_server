@@ -1,4 +1,5 @@
 class V1::ArticlesController < ApplicationController
+  include ResponseHandler
   before_action :set_article, only: %i[ show update destroy ]
 
   def index
