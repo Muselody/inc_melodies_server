@@ -3,17 +3,12 @@ class V1::ArticlesController < ApplicationController
 
   def index
     @articles = Article.all
-    render json: @articles.map { |article| {id: article.hashid, title: article.title}}
-  end
-
-  def show
-    render json: @article
   end
 
   def create
     @article = Article.new(article_params)
     if @article.save
-      render json: @article, status: :created, location: api_v1_article_url(@article)
+      render json: { success: "article succesfully created"}, status: :created
     else
       render json: @article.errors, status: :unprocessable_entity
     end
@@ -29,6 +24,7 @@ class V1::ArticlesController < ApplicationController
 
   def destroy
     @article.destroy
+      delete_success
   end
 
   private
