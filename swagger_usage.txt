@@ -1,0 +1,10 @@
+## Important commands
+
+#Run swagger tests
+  RAILS_ENV=test rails rswag
+
+#create a new swagger controller
+  rails generate rspec:swagger API::NameController --spec_path integration
+
+# Check in localhost url
+  http://localhost:3000/api-docs/index.html
