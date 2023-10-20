@@ -1,9 +1,9 @@
-class ArticlesController < ApplicationController
+class V1::ArticlesController < ApplicationController
   before_action :set_article, only: %i[ show update destroy ]
 
   def index
     @articles = Article.all
-    render json: @articles
+    render json: @articles.map { |article| {id: article.hashid, title: article.title}}
   end
 
   def show
@@ -13,7 +13,7 @@ class ArticlesController < ApplicationController
   def create
     @article = Article.new(article_params)
     if @article.save
-      render json: @article, status: :created, location: @article
+      render json: @article, status: :created, location: api_v1_article_url(@article)
     else
       render json: @article.errors, status: :unprocessable_entity
     end
@@ -25,6 +25,10 @@ class ArticlesController < ApplicationController
     else
       render json: @article.errors, status: :unprocessable_entity
     end
+  end
+
+  def destroy
+    @article.destroy
   end
 
   private
