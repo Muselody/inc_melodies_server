@@ -23,11 +23,13 @@ paths:
               schema:
                 type: "array"
                 items:
+                  type: "string"
                   title: "string"
             application/xml:
               schema:
                 type: "array"
                 items:
+                  type: "string"
                   title: "string"
         "400":
           description: Invalid ID supplied
