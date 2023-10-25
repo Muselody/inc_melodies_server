@@ -3,6 +3,7 @@ module V1
   class ArticlesController < ApplicationController
     include ResponseHandler
     before_action :set_article, only: %i[show update destroy]
+    before_action :authenticate_v1_user!, only: %i[create update destroy]
 
     def index
       @articles = Article.all
