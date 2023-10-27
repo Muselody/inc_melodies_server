@@ -10,7 +10,7 @@ Rails.application.routes.draw do
       }
       resources :articles, param: :hashid, format: 'json'
       resources :users, param: :hashid, format: 'json'
-      resources :gender, param: :hashid, format: 'json', only: %i[index create]
+      resources :genders, param: :hashid, format: 'json', only: %i[index create]
     end
   end
   # Defines the root path route ("/")
