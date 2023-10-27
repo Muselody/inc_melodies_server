@@ -6,6 +6,7 @@ module V1
     class RegistrationsController < DeviseTokenAuth::RegistrationsController
       # before_action :configure_sign_up_params, only: [:create]
       # before_action :configure_account_update_params, only: [:update]
+      # before_action :configure_sign_up_params
 
       # GET /resource/sign_up
       # def new
@@ -46,7 +47,7 @@ module V1
 
       # If you have extra params to permit, append them to the sanitizer.
       # def configure_sign_up_params
-      #   devise_parameter_sanitizer.permit(:sign_up, keys: [:attribute])
+      #   devise_parameter_sanitizer.permit(:sign_up, keys: %i[name nickname])
       # end
 
       # If you have extra params to permit, append them to the sanitizer.
@@ -63,6 +64,15 @@ module V1
       # def after_inactive_sign_up_path_for(resource)
       #   super(resource)
       # end
+      private
+
+      def sign_up_params
+        params.permit(:name, :email, :password, :password_confirmation, :nickname)
+      end
+
+      def account_update_params
+        params.permit(:name, :email)
+      end
     end
   end
 end
