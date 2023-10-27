@@ -1,3 +1,4 @@
+# Class to handle response in the app
 module ResponseHandler
   extend ActiveSupport::Concern
 

@@ -6,6 +6,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       mount_devise_token_auth_for 'User', at: 'auth'
       resources :articles, param: :hashid, format: 'json'
+      resources :users, param: :hashid, format: 'json'
     end
   end
   # Defines the root path route ("/")
