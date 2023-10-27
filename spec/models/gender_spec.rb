@@ -1,5 +1,10 @@
 require 'rails_helper'
 
 RSpec.describe Gender, type: :model do
-  pending "add some examples to (or delete) #{__FILE__}"
+  describe 'Gender Model' do
+    it 'valid model for gender' do
+      gender = Gender.new(name: 'test gender')
+      expect(gender).to be_valid
+    end
+  end
 end

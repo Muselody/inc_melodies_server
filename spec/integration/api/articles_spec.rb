@@ -1,4 +1,4 @@
-require 'swagger_helper'
+require 'rails_helper'
 
-RSpec.describe 'api/articles', type: :request do
+RSpec.describe 'Articles API', type: :request do
 end
