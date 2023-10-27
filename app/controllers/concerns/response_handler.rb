@@ -3,7 +3,7 @@ module ResponseHandler
   extend ActiveSupport::Concern
 
   def delete_success
-    render json: { message: "successfully deleted" }
+    render json: { message: 'successfully deleted' }
   end
 
   def render_success(data, status: :ok)
