@@ -1,6 +1,10 @@
 module V1
   # Controller for genders
   class GendersController < ApplicationController
+    include ResponseHandler
+    before_action :set_gender, only: %i[create]
+    before_action :authenticate_v1_user, only: %i[create]
+
     def index
       @genders = Gender.all
     end
