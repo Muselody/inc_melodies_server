@@ -3,6 +3,7 @@
 # Devise user model
 class User < ActiveRecord::Base
   include Hashid::Rails
+  has_many :articles
   # Include default devise modules. Others available are:
   # :confirmable, :lockable, :timeoutable, :trackable and :omniauthable
   devise :database_authenticatable, :registerable,
